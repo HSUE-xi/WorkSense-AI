@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>作業員入口 - WorkSense-AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="topbar">
+        <a href="/" class="brand">WorkSense-AI</a>
+        <nav>
+            <a href="/operator">作業員入口</a>
+            <a href="/dashboard">主管看板</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="panel">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">Operator</p>
+                    <h1>工單操作</h1>
+                </div>
+                <button id="refreshOrders" class="ghost-button">重新整理</button>
+            </div>
+
+            <form id="createOrderForm" class="create-form">
+                <label>
+                    工單編號
+                    <input name="work_order_no" placeholder="WO-001" required>
+                </label>
+                <label>
+                    產品名稱
+                    <input name="product_name" placeholder="控制盒 A" required>
+                </label>
+                <label>
+                    標準工時（秒）
+                    <input name="standard_time" type="number" min="1" placeholder="1800" required>
+                </label>
+                <button type="submit">建立工單</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">Work Orders</p>
+                    <h2>目前工單</h2>
+                </div>
+                <p id="operatorMessage" class="message"></p>
+            </div>
+            <div id="operatorOrders" class="order-grid"></div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

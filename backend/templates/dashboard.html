@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主管看板 - WorkSense-AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="topbar">
+        <a href="/" class="brand">WorkSense-AI</a>
+        <nav>
+            <a href="/operator">作業員入口</a>
+            <a href="/dashboard">主管看板</a>
+        </nav>
+    </header>
+
+    <main class="page">
+        <section class="panel">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">Dashboard</p>
+                    <h1>主管看板</h1>
+                </div>
+                <button id="refreshDashboard" class="ghost-button">重新整理</button>
+            </div>
+            <div id="dashboardStats" class="stats-grid"></div>
+        </section>
+
+        <section class="panel">
+            <div class="section-title">
+                <div>
+                    <p class="eyebrow">Live Orders</p>
+                    <h2>工單進度</h2>
+                </div>
+                <p id="dashboardMessage" class="message"></p>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>工單</th>
+                            <th>產品</th>
+                            <th>狀態</th>
+                            <th>累積工時</th>
+                            <th>效率</th>
+                            <th>AI 狀態</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dashboardRows"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

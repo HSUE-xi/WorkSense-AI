@@ -1,6 +1,7 @@
 import sqlite3
+from pathlib import Path
 
-DATABASE = "backend/database/worksense.db"
+DATABASE = Path(__file__).with_name("worksense.db")
 
 
 def get_connection():
