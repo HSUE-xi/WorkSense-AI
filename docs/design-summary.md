@@ -49,8 +49,9 @@
 
 - MES 端：沿用 Flask + SQLite + 原生 JavaScript。
 - AI 端：獨立 Python 程式（YOLO pose），以 HTTP 送事件給 MES。
-- 訓練與展示影片：自行模擬工作站錄製（作業中、滑手機、離開、兩人協作等情境）。
+- 訓練與展示影片：自行模擬工作站錄製（作業中、滑手機、離開、兩人協作等情境），入鏡者須簽同意書。
+- 競賽規則：不得使用中國或中資的開源模型或介接工具（ADR-0005）。
 
-## 待決定
+## 分工與時程
 
-- 兩人分工細節
+見 [implementation-plan.md](./implementation-plan.md)：A（MES／整合）、B（AI／影像與效率建議）。
